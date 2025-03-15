@@ -1,2 +1,2 @@
-git clone https://github.com/MazenAhmedAbdalmohsen/disease-predictor.git
+git clone https://huggingface.co/spaces/MazenAhmedAbdalmohsen/disease-predictor
 cd disease-predictor
