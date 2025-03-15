@@ -9,16 +9,19 @@ import streamlit as st
 from streamlit_option_menu import option_menu
 
 # Load the saved models
+# Use relative paths for Streamlit Cloud
 diabetes_model = pickle.load(open('diabetes_model.sav', 'rb'))
 heart_disease_model = pickle.load(open('heart_disease_model.sav', 'rb'))
 parkinsons_model = pickle.load(open('parkinsons_model.sav', 'rb'))
 
 # Sidebar for navigation
 with st.sidebar:
-    selected = option_menu('Multiple Disease Prediction System',
-                           ['Diabetes Prediction', 'Heart Disease Prediction', 'Parkinsons Prediction'],
-                           icons=['activity', 'heart', 'person'],
-                           default_index=0)
+    selected = option_menu(
+        'Multiple Disease Prediction System',
+        ['Diabetes Prediction', 'Heart Disease Prediction', 'Parkinsons Prediction'],
+        icons=['activity', 'heart', 'person'],
+        default_index=0
+    )
 
 # Diabetes Prediction Page
 if selected == 'Diabetes Prediction':
